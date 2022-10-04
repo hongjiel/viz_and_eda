@@ -19,6 +19,7 @@ library(tidyverse)
 
 ``` r
 library(ggridges)
+library(patchwork)
 ```
 
 ``` r
@@ -170,7 +171,19 @@ seasonality_plot =
   geom_point(alpha = .5) +
   geom_smooth(se = FALSE) + 
   theme(legend.position = "bottom")
+
+(tmax_tmin_plot + prcp_density_plot) / seasonality_plot # library(patchwork) needed
 ```
+
+    ## Warning: Removed 15 rows containing missing values (geom_point).
+
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+    ## Warning: Removed 3 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 3 rows containing missing values (geom_point).
+
+![](viz_part_02_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ## Data manipulation
 

@@ -9,6 +9,7 @@ output: github_document
 ```{r}
 library(tidyverse)
 library(ggridges)
+library(patchwork)
 ```
 
 ```{r}
@@ -122,7 +123,8 @@ seasonality_plot =
   geom_point(alpha = .5) +
   geom_smooth(se = FALSE) + 
   theme(legend.position = "bottom")
-  
+
+(tmax_tmin_plot + prcp_density_plot) / seasonality_plot # library(patchwork) needed
 ```
 
 
